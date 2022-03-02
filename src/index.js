@@ -1,14 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from "./reportWebVitals";
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+
+import "./index.css";
+import App from "./App";
+import { ProductContextProvider } from "./context/products-context";
+
+// const rootReducer = combineReducers({
+//   shop: productReducer,
+// });
+
+// const store = createStore(rootReducer);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <ProductContextProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </ProductContextProvider>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
